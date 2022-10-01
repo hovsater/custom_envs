@@ -1,21 +1,16 @@
 # CustomEnvs
 
-**TODO: Add description**
+Example Mix application where we try to use `local` as the default environment
+and `ci` as the test environment.
 
-## Installation
+Ideally, tasks should run in `local` by default (analogous to the `dev` environment).
+`mix test` should run in the `ci` environment.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `custom_envs` to your list of dependencies in `mix.exs`:
+## Setup
 
-```elixir
-def deps do
-  [
-    {:custom_envs, "~> 0.1.0"}
-  ]
-end
-```
+Ensure `MIX_ENV` is set to `local` by default. Because we expect that to be the
+default environment. A `.envrc` file exists in the repository that will be
+automatically loaded by [direnv](https://direnv.net/).
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/custom_envs>.
-
+If you don't have direnv installed, please run `export MIX_ENV=local` in your
+terminal.
